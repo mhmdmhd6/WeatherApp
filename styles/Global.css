@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  height: 100vh;
+  background: no-repeat center center fixed;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+}
+@font-face {
+  font-family: "Vazir";
+  src: url("../font/Vazir.ttf");
+}
+.card {
+  width: 450px;
+  height: 500px;
+  direction: rtl;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.301);
+  max-height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.418);
+  font-family: "Vazir";
+}
+.card .searchBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 10px;
+}
+.searchBox input {
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 45px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.11);
+  border: 1px solid rgba(255, 255, 255, 0.247);
+  font-size: 120%;
+  color: #fff;
+  outline: none;
+  font-weight: 100;
+  font-family: "Vazir";
+}
+.searchBox input::placeholder {
+  color: #fff;
+}
+.searchBox button {
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 45px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.247);
+  border: 1px solid rgba(255, 255, 255, 0.247);
+  font-size: 120%;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  transition: 0.2s;
+  font-family: "Vazir";
+}
+.searchBox button:hover {
+  box-shadow: none;
+  background: rgba(255, 255, 255, 0.788);
+  color: black;
+}
