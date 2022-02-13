@@ -1,71 +1,105 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Vazir";
 }
 body {
   display: flex;
-  height: 100vh;
-  background: no-repeat center center fixed;
-  background-size: cover;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  height: 100vh;
+  /* background: no-repeat center center fixed;
+  background-size: cover; */
+  background-color: #d1dfeb;
 }
 @font-face {
   font-family: "Vazir";
   src: url("../font/Vazir.ttf");
 }
-.card {
-  width: 450px;
-  height: 500px;
-  direction: rtl;
-  border-radius: 12px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.301);
-  max-height: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.418);
-  font-family: "Vazir";
-}
-.card .searchBox {
+.searchBox {
+  width: 50%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  margin: 10px;
+  direction: rtl;
+  margin: 50px;
 }
 .searchBox input {
   padding: 0.5em 1em;
-  border: none;
   border-radius: 45px;
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.11);
-  border: 1px solid rgba(255, 255, 255, 0.247);
+  background: #d3deed;
+  box-shadow: -10px -10px 25px 0px #e6ecf3, 10px 10px 25px 0px #bbc4d3;
+  border: 1px solid rgba(255, 255, 255, 0.418);
   font-size: 120%;
-  color: #fff;
+  color: rgba(12, 12, 12, 0.637);
   outline: none;
   font-weight: 100;
-  font-family: "Vazir";
+  transition: 1s;
+}
+.searchBox input:focus {
+  box-shadow: inset -4px -5px 16px 0px #e6ecf3, inset 4px 4px 13px 0px #a4b2ce;
 }
 .searchBox input::placeholder {
   color: #fff;
 }
 .searchBox button {
   padding: 0.5em 1em;
-  border: none;
   border-radius: 45px;
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.247);
-  border: 1px solid rgba(255, 255, 255, 0.247);
+  background: #d3deed;
+  box-shadow: -10px -10px 25px 0px #e6ecf3, 10px 10px 25px 0px #bbc4d3;
+  border: 1px solid rgba(255, 255, 255, 0.418);
   font-size: 120%;
-  color: #fff;
+  color: #30405b;
   outline: none;
   cursor: pointer;
-  transition: 0.2s;
-  font-family: "Vazir";
+  transition: 0.5s ease-in;
 }
-.searchBox button:hover {
-  box-shadow: none;
-  background: rgba(255, 255, 255, 0.788);
+.searchBox button:focus {
+  box-shadow: inset -4px -5px 16px 0px #e6ecf3, inset 4px 4px 13px 0px #a4b2ce;
   color: black;
+}
+
+.card {
+  padding: 5px 40px;
+  display: flex;
+  background-color: #d3deed;
+  flex-direction: column;
+  justify-content: space-evenly;
+  direction: rtl;
+  border-radius: 40px;
+  max-height: 90%;
+  /* backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.301); */
+  border: 1px solid rgba(255, 255, 255, 0.418);
+  box-shadow: -10px -10px 25px 0px #e6ecf3, 10px 10px 25px 0px #bbc4d3;
+}
+.weather_name--temp {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+.card h1 {
+  font-size: 200%;
+  font-weight: 900;
+  color: #30405b;
+  text-shadow: -3px -3px 5px #ffffff, 3px 3px 5px #60738d;
+}
+.temp {
+  direction: ltr;
+}
+.card .icon {
+  filter: drop-shadow(27px 20px 10px #bbc4d3);
+  padding: 0;
+  margin: 0 auto;
+}
+.card .details {
+  display: flex;
+  padding: 0.5rem 1.5rem;
+  flex-direction: column;
+  justify-content: space-around;
+  box-shadow: inset -8px -8px 15px -5px #eef2f5,
+              inset 6px 7px 10px -4px #adb7c5;
+  border-radius: 15px;
+  margin: 10px 0;
 }

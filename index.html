@@ -9,18 +9,22 @@
     <title>weather app</title>
   </head>
   <body>
+    <div class="searchBox">
+      <input type="text" class="searchInput" placeholder="جستجو..." />
+      <button class="searchButton">بگرد!</button>
+    </div>
     <div class="card">
-      <div class="searchBox">
-        <input type="text" class="searchInput" placeholder="جستجو..." />
-        <button class="searchButton">بگرد!</button>
-      </div>
-      <div class="weather">
-        <h1 class="cityName"></h1>
-        <h3 class="description"></h3>
-        <h3 class=""></h3>
-        <h3 class=""></h3>
-        <h3 class=""></h3>
-      </div>
+        <img class="icon" />
+        <div class="weather_name--temp">
+          <h1 class="cityName"></h1>
+          <h1 class="temp"></h1>
+        </div>
+        <div class="details">
+          <p class="description"></p>
+          <p class="windSpeed"></p>
+          <p class="humidity"></p>
+          <p class=""></p>
+        </div>
     </div>
     <script src="./src/script.js"></script>
   </body>
