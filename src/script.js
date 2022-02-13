@@ -1,6 +1,7 @@
 "use strict";
 let cityName = "آمل";
-const audio = new Audio('rain.mp3', { scope: '../WeatherApp/sound/' });
+// const audio = new Audio('rain.mp3', { scope: '../WeatherApp/sound/' });
+const audio = new Audio("https://github.com/mhmdmhd6/WeatherApp/sound/rain.mp3");
 const body = document.querySelector("body");
 
 function featchWeather() {
