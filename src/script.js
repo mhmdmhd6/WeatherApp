@@ -1,6 +1,6 @@
 "use strict";
 let cityName = "آمل";
-const audio = new Audio("../sound/rain.mp3");
+const audio = new Audio("/sound/rain.mp3");
 const body = document.querySelector("body");
 
 function featchWeather() {
@@ -29,7 +29,6 @@ function displayWeather(response) {
     "سرعت باد : " + wind + " کیلومتر / ساعت";
   document.querySelector(".temp").innerHTML = temp + "°";
   document.querySelector(".humidity").innerHTML = "رطوبت : " + humidity + "%";
-  console.log(response.data.weather[0].icon, response.data);
   if (response.data.weather[0].main == "Rain") {
     audio.play();
   }
