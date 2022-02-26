@@ -6,25 +6,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="./styles/Global.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap"
+      rel="stylesheet"
+    />
+
     <title>weather app</title>
   </head>
   <body>
-    <div class="searchBox">
-      <input type="text" class="searchInput" placeholder="جستجو..." />
-      <button class="searchButton">بگرد!</button>
-    </div>
-    <div class="card">
+    <nav>
+      <h1 class="logo">نسیم کوی من</h1>
+      <div class="searchBox">
+        <input type="text" class="searchInput" placeholder="جستجو..." />
+        <button class="searchButton">بگرد!</button>
+      </div>
+      <button class="user">
+        <span class="menu_toggle"></span>
+        <ul class="menu-desktop">
+          <li>
+            <a href="./src/aboutMe.html"> درباره ما </a>
+          </li>
+        </ul>
+        <ul class="menu-phone">
+          <li>سلام محمد</li>
+          <li>تغییر فونت</li>
+          <li>
+            <a href="./src/aboutMe.html"> درباره ما </a>
+          </li>
+          <li>ثبت نام</li>
+        </ul>
+      </button>
+    </nav>
+
+    <div class="card--list">
+      <div class="card">
+        <div class="thermometer">
+          <div class="background"></div>
+        </div>
+        <div class="thermometer_humidity">
+          <div class="background_humidity">
+            <span class="percent"></span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
         <img class="icon" />
         <div class="weather_name--temp">
-          <h1 class="cityName"></h1>
+          <div class="location">
+            <i class="bx bx-map"></i>
+            <span></span>
+          </div>
           <h1 class="temp"></h1>
         </div>
         <div class="details">
           <p class="description"></p>
           <p class="windSpeed"></p>
-          <p class="humidity"></p>
-          <p class=""></p>
+          <h2 class="recommend"></h2>
         </div>
+      </div>
+      <div class="card">
+        <div class="calendar">
+          <div class="months">
+            <div class="details-cal">
+              <h1 class="month"></h1>
+              <p class="today1"></p>
+            </div>
+          </div>
+          <div class="week">
+            <div class="weekdays">
+              <div>ش</div>
+              <div>ی</div>
+              <div>د</div>
+              <div>س</div>
+              <div>چ</div>
+              <div>پ</div>
+              <div>ج</div>
+            </div>
+            <div class="days">
+              <div class="prev-date">23</div>
+              <div class="prev-date">24</div>
+              <div class="prev-date">25</div>
+              <div class="prev-date">26</div>
+              <div class="prev-date">27</div>
+              <div class="prev-date">28</div>
+              <div class="prev-date">29</div>
+              <div class="prev-date">30</div>
+              <div class="next-date">1</div>
+              <div class="next-date">2</div>
+              <div class="next-date">3</div>
+              <div class="next-date">4</div>
+              <div class="next-date">5</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="monasebat">
+      <div>
+        <p></p>
+        <small></small>
+      </div>
+      <img src="" alt="" />
+    </div>
+    <div class="oghat">
+      <div class="box sobh"></div>
+      <div class="box tolu"></div>
+      <div class="box zohr"></div>
+      <div class="box ghorub"></div>
+      <div class="box maghreb"></div>
+      <div class="box nimeshab"></div>
+    </div>
+    <div class="navBar">
+      <section><i class="bx bxs-thermometer"></i></section>
+      <section><i class="bx bx-calendar"></i></section>
+      <section><i class="bx bx-location-plus"></i></section>
     </div>
     <script src="./src/script.js"></script>
   </body>
