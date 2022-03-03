@@ -1,7 +1,7 @@
 "use strict";
 let cityName = "آمل";
 const card_list = document.querySelector(".card--list");
-const audio = new Audio("../WeatherApp/sound/rain.mp3");
+const audio = new Audio("./sound/rain.mp3");
 
 function featchWeather() {
   const apiKey = "c0ac4587278e2f95fad212e0ef59e540";
@@ -20,7 +20,7 @@ function displayWeather(response) {
   // const icon = response.data.weather[0].icon;
   document.querySelector(
     ".icon"
-  ).src = `../WeatherApp/img/weather_des/${description}.gif`;
+  ).src = `./img/weather_des/${description}.gif`;
   document.querySelector(".location span").innerHTML = cityName;
   if (cityName.length > 8) {
     document.querySelector(".location span").style.fontSize = "1.5rem";
@@ -37,10 +37,10 @@ function displayWeather(response) {
     humidity + "%";
 
   if (temp >= 25 && main === "Clear") {
-    document.querySelector(".icon").src = "../img/weather_des/آسمان صاف2.gif";
+    document.querySelector(".icon").src = "./img/weather_des/آسمان صاف2.gif";
   }
   if (wind >= 5) {
-    document.querySelector(".icon").src = "../img/weather_des/wind.gif";
+    document.querySelector(".icon").src = "./img/weather_des/wind.gif";
   }
 
   var persent = ((feels + 100) * 100) / 157;
@@ -56,7 +56,7 @@ function displayWeather(response) {
   let index = 0;
 
   for (let i = 0; i <= 5; i++) {
-    images.push(`../WeatherApp/img/${main}/${i}.jpg`);
+    images.push(`./img/${main}/${i}.jpg`);
   }
 
   index = Math.floor(Math.random() * images.length);
@@ -81,7 +81,7 @@ function displaySeason(data) {
   // console.log(season, data, year_left);
   document.querySelector(
     ".container"
-  ).style.backgroundImage = `url(../WeatherApp/img/season/${season}.jpg)`;
+  ).style.backgroundImage = `url(./img/season/${season}.jpg)`;
   document.querySelector(".container").style.backgroundSize = "cover";
 }
 fetchSeason();
@@ -216,18 +216,18 @@ xhr.onload = function () {
 
       if (month[0].innerText == "اسفند") {
         if (day.innerText === "۲۴") {
-          day.style.background = "url(../img/fire.gif)";
+          day.style.background = "url(./img/fire.gif)";
           day.style.backgroundSize = "cover";
         }
 
         if (day.innerText === "۱۵") {
-          day.style.background = "url(../img/tree.gif)";
+          day.style.background = "url(./img/tree.gif)";
           day.style.backgroundSize = "cover";
         }
       }
       if (month[0].innerText == "فروردین") {
         if (day.innerText === "۱۳") {
-          day.style.background = "url(../img/tree.gif)";
+          day.style.background = "url(./img/tree.gif)";
           day.style.backgroundSize = "cover";
         }
         for (i = 1; i <= 4; i++) {
