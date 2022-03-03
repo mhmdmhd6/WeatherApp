@@ -14,7 +14,7 @@
 }
 @font-face {
   font-family: "yeakn-bakh";
-  src: url("../WeatherApp/font/YekanBakh.woff");
+  src: url("./font/YekanBakh.woff");
 }
 html {
   scroll-behavior: smooth;
