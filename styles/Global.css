@@ -6,15 +6,15 @@
 }
 @font-face {
   font-family: "Vazir";
-  src: url("./font/Vazir.ttf");
+  src: url("./WeatherApp/font/Vazir.ttf");
 }
 @font-face {
   font-family: "maneli";
-  src: url("./font/MANELI.TTF");
+  src: url("./WeatherApp/font/MANELI.TTF");
 }
 @font-face {
   font-family: "yeakn-bakh";
-  src: url("./font/YekanBakh.woff");
+  src: url("./WeatherApp/font/YekanBakh.woff");
 }
 html {
   scroll-behavior: smooth;
