@@ -10,7 +10,7 @@ function featchWeather() {
 }
 
 function displayWeather(response) {
-  console.log(response.data);
+  // console.log(response.data);
   const description = response.data.weather[0].description;
   const wind = response.data.wind.speed;
   const main = response.data.weather[0].main;
@@ -76,7 +76,7 @@ function displaySeason(data) {
   const year_left = data.date.year.agone.percent.en;
   document.querySelector(".taPaianeSal--seconde div").style.width =
     year_left + "%";
-  console.log(season, data, year_left);
+  // console.log(season, data, year_left);
   document.querySelector(
     ".container"
   ).style.backgroundImage = `url(../img/season/${season}.jpg)`;
@@ -184,8 +184,8 @@ xhr.onload = function () {
     document.querySelector(".details-cal").innerHTML =
       month[0].innerHTML + " " + year[0].innerHTML;
 
-    console.log(response, borgfalaki[0].innerText);
-    console.log(tahvilesal[0].innerText);
+    // console.log(response, borgfalaki[0].innerText);
+    // console.log(tahvilesal[0].innerText);
 
     document.querySelector(".date").innerHTML =
       year[0].innerText +
@@ -197,7 +197,7 @@ xhr.onload = function () {
     document.querySelector("#miladi").innerHTML = miladidate.innerText;
     document.querySelector("#qamari").innerHTML = qamaridate.innerText;
 
-    console.log(miladidate.innerText);
+    // console.log(miladidate.innerText);
 
     for (let i = 0; i < event.length; i++) {
       let li = document.createElement("li");
@@ -275,7 +275,7 @@ function fetch_oghat() {
 }
 
 function display_oghat(data) {
-  console.log(data);
+  // console.log(data);
   document.querySelector("div.tolu").innerHTML =
     data.result.tolu_aftab + "<br/>" + "طلوع آفتاب";
   document.querySelector("div.sobh").innerHTML =

@@ -60,9 +60,6 @@ nav .top {
   padding: 13px;
   margin-bottom: 35px;
 }
-nav .top .logo {
-  margin-right: 20px;
-}
 nav .top button {
   margin-left: 20px;
 }
@@ -142,6 +139,7 @@ nav .user {
   visibility: visible;
   opacity: 1;
 }
+/* search item */
 .searchBox {
   width: 50%;
   display: flex;
@@ -168,15 +166,6 @@ nav .user {
   cursor: text;
 }
 
-@media screen and (max-width: 950px) {
-  .searchBox {
-    width: 70%;
-  }
-  .searchBox input:focus {
-    width: 70%;
-    cursor: text;
-  }
-}
 .searchBox input::placeholder {
   color: #fff;
 }
@@ -190,14 +179,20 @@ nav .user {
   outline: none;
   cursor: pointer;
   transition: 0.5s ease-in;
-  text-shadow: 0 7px 10px #3e4cd3;
-  /* box-shadow: -5px -5px 10px #8291f16c, 7px 7px 10px #3e4dd371; */
+  text-shadow: 0 7px 10px #040a41;
   transition: 0.2s;
 }
 .searchBox button:active {
   transform: scale(0.9);
 }
 @media screen and (max-width: 950px) {
+  .searchBox {
+    width: 70%;
+  }
+  .searchBox input:focus {
+    width: 70%;
+    cursor: text;
+  }
   .searchBox input,
   .searchBox button {
     font-size: 75%;
@@ -220,6 +215,8 @@ nav .user {
   }
 }
 
+/* Cards box */
+
 .card--list {
   width: 100%;
   height: 100vh;
@@ -239,11 +236,6 @@ nav .user {
 .toggle-up a {
   text-decoration: none;
 }
-@media screen and (max-width: 950px) {
-  .toggle-down {
-    display: none;
-  }
-}
 .toggle-up {
   position: absolute;
   bottom: 80%;
@@ -254,7 +246,10 @@ nav .user {
 @media screen and (max-width: 950px) {
   .toggle-up {
     display: none;
-  }  
+  }
+  .toggle-down {
+    display: none;
+  }
 }
 
 .card {
@@ -269,7 +264,6 @@ nav .user {
   border-radius: 40px;
   background: #00000017;
   backdrop-filter: blur(7px);
-  max-height: 90%;
   z-index: 100;
   transition: 150ms;
 }
