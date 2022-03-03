@@ -18,7 +18,9 @@ function displayWeather(response) {
   const temp = response.data.main.temp;
   const feels = response.data.main.feels_like;
   // const icon = response.data.weather[0].icon;
-  document.querySelector(".icon").src = `../img/weather_des/${description}.gif`;
+  document.querySelector(
+    ".icon"
+  ).src = `../WeatherApp/img/weather_des/${description}.gif`;
   document.querySelector(".location span").innerHTML = cityName;
   if (cityName.length > 8) {
     document.querySelector(".location span").style.fontSize = "1.5rem";
