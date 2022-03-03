@@ -1,7 +1,7 @@
 "use strict";
 let cityName = "آمل";
 const card_list = document.querySelector(".card--list");
-const audio = new Audio("./sound/rain.mp3");
+const audio = new Audio("../WeatherApp/sound/rain.mp3");
 
 function featchWeather() {
   const apiKey = "c0ac4587278e2f95fad212e0ef59e540";
@@ -312,7 +312,6 @@ function showCal() {
   cardTemp.style.display = "none";
   cardHum.style.display = "none";
 }
-
 
 /******** previouse code backup *********/
 /* 
