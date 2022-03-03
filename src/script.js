@@ -56,7 +56,7 @@ function displayWeather(response) {
   let index = 0;
 
   for (let i = 0; i <= 5; i++) {
-    images.push(`../img/${main}/${i}.jpg`);
+    images.push(`../WeatherApp/img/${main}/${i}.jpg`);
   }
 
   index = Math.floor(Math.random() * images.length);
@@ -81,7 +81,7 @@ function displaySeason(data) {
   // console.log(season, data, year_left);
   document.querySelector(
     ".container"
-  ).style.backgroundImage = `url(../img/season/${season}.jpg)`;
+  ).style.backgroundImage = `url(../WeatherApp/img/season/${season}.jpg)`;
   document.querySelector(".container").style.backgroundSize = "cover";
 }
 fetchSeason();
