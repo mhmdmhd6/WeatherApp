@@ -18,9 +18,7 @@ function displayWeather(response) {
   const temp = response.data.main.temp;
   const feels = response.data.main.feels_like;
   // const icon = response.data.weather[0].icon;
-  document.querySelector(
-    ".icon"
-  ).src = `./img/weather_des/${description}.gif`;
+  document.querySelector(".icon").src = `./img/weather_des/${description}.gif`;
   document.querySelector(".location span").innerHTML = cityName;
   if (cityName.length > 8) {
     document.querySelector(".location span").style.fontSize = "1.5rem";
@@ -170,10 +168,10 @@ xhr.onload = function () {
     );
     var year = xhr.responseXML.querySelectorAll(".selectYear");
     var miladidate = xhr.responseXML.querySelector(
-      "#ctl00_cphTop_Sampa_Web_View_TimeUI_ShowDate00cphTop_3734_lblGregorian"
+      "#ctl00_cphTop_Sampa_Web_View_TimeUI_ShowDate11cphTop_3917_lblGregorian"
     );
     var qamaridate = xhr.responseXML.querySelector(
-      "#ctl00_cphTop_Sampa_Web_View_TimeUI_ShowDate00cphTop_3734_lblHijri"
+      "#ctl00_cphTop_Sampa_Web_View_TimeUI_ShowDate11cphTop_3917_lblHijri"
     );
     var month = xhr.responseXML.querySelectorAll(".selectMonth");
     var event = xhr.responseXML.querySelectorAll(".list-unstyled > li");
@@ -186,8 +184,8 @@ xhr.onload = function () {
     document.querySelector(".details-cal").innerHTML =
       month[0].innerHTML + " " + year[0].innerHTML;
 
-    // console.log(response, borgfalaki[0].innerText);
-    // console.log(tahvilesal[0].innerText);
+    console.log(response, borgfalaki[0].innerText);
+    console.log(tahvilesal[0].innerText);
 
     document.querySelector(".date").innerHTML =
       year[0].innerText +
@@ -196,10 +194,10 @@ xhr.onload = function () {
       "<br/>" +
       month[0].innerText;
 
-    document.querySelector("#miladi").innerHTML = miladidate.innerText;
-    document.querySelector("#qamari").innerHTML = qamaridate.innerText;
+    document.querySelector("#miladi").innerHTML = miladidate.textContent;
+    document.querySelector("#qamari").innerHTML = qamaridate.textContent;
 
-    // console.log(miladidate.innerText);
+    console.log(miladidate, qamaridate);
 
     for (let i = 0; i < event.length; i++) {
       let li = document.createElement("li");
@@ -235,10 +233,6 @@ xhr.onload = function () {
             day.style.background = "green";
           }
         }
-      }
-
-      if (day.innerHTML === "") {
-        day.classList.add("remove");
       }
     }
   }
