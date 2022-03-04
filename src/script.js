@@ -1,7 +1,7 @@
 "use strict";
 let cityName = "آمل";
 const card_list = document.querySelector(".card--list");
-const audio = new Audio("./sound/rain.mp3");
+const audioRain = new Audio("./sound/rain.mp3");
 
 function featchWeather() {
   const apiKey = "c0ac4587278e2f95fad212e0ef59e540";
@@ -10,14 +10,12 @@ function featchWeather() {
 }
 
 function displayWeather(response) {
-  // console.log(response.data);
   const description = response.data.weather[0].description;
   const wind = response.data.wind.speed;
   const main = response.data.weather[0].main;
   const humidity = response.data.main.humidity;
   const temp = response.data.main.temp;
   const feels = response.data.main.feels_like;
-  // const icon = response.data.weather[0].icon;
   document.querySelector(".icon").src = `./img/weather_des/${description}.gif`;
   document.querySelector(".location span").innerHTML = cityName;
   if (cityName.length > 8) {
@@ -29,7 +27,7 @@ function displayWeather(response) {
     " وضعیت هوا : " + description;
   document.querySelector(".windspeed").innerHTML =
     "سرعت باد : " + wind + " کیلومتر / ساعت";
-  document.querySelector(".temp").innerHTML = temp + "°";
+  document.querySelector(".temp").innerHTML = temp + " C" + "°";
   document.querySelector(".background_humidity").style.height = humidity + "%";
   document.querySelector(".background_humidity span").innerHTML =
     humidity + "%";
@@ -37,7 +35,7 @@ function displayWeather(response) {
   if (temp >= 25 && main === "Clear") {
     document.querySelector(".icon").src = "./img/weather_des/آسمان صاف2.gif";
   }
-  if (wind >= 5) {
+  if (wind >= 14) {
     document.querySelector(".icon").src = "./img/weather_des/wind.gif";
   }
 
@@ -45,9 +43,9 @@ function displayWeather(response) {
   var persent = Math.round(persent);
   document.querySelector(".background").style.height = persent + "%";
   if (main == "Rain") {
-    audio.play();
+    audioRain.play();
   } else {
-    audio.pause();
+    audioRain.pause();
   }
 
   let images = [];
@@ -76,83 +74,12 @@ function displaySeason(data) {
   const year_left = data.date.year.agone.percent.en;
   document.querySelector(".taPaianeSal--seconde div").style.width =
     year_left + "%";
-  // console.log(season, data, year_left);
   document.querySelector(
     ".container"
   ).style.backgroundImage = `url(./img/season/${season}.jpg)`;
   document.querySelector(".container").style.backgroundSize = "cover";
 }
 fetchSeason();
-
-/* displaying calendar
-function displayCal(data) {
-  const year = data.date.year.number.fa;
-  const kabiseh = data.date.year.leapyear;
-  const monasebatHS = data.date.day.events.local.text;
-  let monasebatHG = data.date.day.events.holy;
-  const animal = data.date.year.animal;
-  const month = data.date.month.name;
-  const date = data.date.full.official.iso.fa;
-
-  document.querySelector("p.today1").innerHTML = date;
-  document.querySelector("h1.month").innerHTML = month;
-  document.querySelector(".monasebat img").src = `./img/${animal}.jpg`;
-  console.log(data);
-
-  if (monasebatHG !== null) {
-    monasebatHG = data.date.day.events.holy.text;
-  }
-
- 
-  document.querySelector(".monasebat div p").innerHTML =
-    `${monasebatHS} و ${monasebatHG}`;
-  if (monasebatHS === null) {
-    document.querySelector(".monasebat div p").innerHTML = monasebatHG + " ";
-  } else if (monasebatHG === null) {
-    document.querySelector(".monasebat div p").innerHTML = monasebatHS + " ";
-  } else if (monasebatHG === null && monasebatHS === null) {
-    document.querySelector(".monasebat div p").innerHTML =
-      "امروز رویدادی ندارد";
-  }
-
-
-  if (monasebatHS === null) {
-    document.querySelector(".monasebat div p").innerHTML = monasebatHG;
-  } else if (monasebatHG === null) {
-    document.querySelector(".monasebat div p").innerHTML = monasebatHS;
-  } else if (monasebatHG === null && monasebatHS === null) {
-    document.querySelector(".monasebat div p").innerHTML =
-      "امروز رویدادی ندارد";
-  } else if (monasebatHG !== null && monasebatHS !== null) {
-    document.querySelector(".monasebat div p").innerHTML =
-      monasebatHS + " و " + monasebatHG;
-  }
-
-  document.querySelector(
-    ".monasebat div small"
-  ).innerHTML = `سال ${year} ${kabiseh} است`;
-
-  for (let i = 1; i <= 29; i++) {
-    let day = document.createElement("div");
-    day.innerHTML = i;
-    document.querySelector(".days").appendChild(day);
-
-    if (i == 15) {
-      day.classList.add("tree");
-    }
-
-    if (i == 25) {
-      day.classList.add("fire");
-    }
-
-    if (i == data.date.day.number.en) {
-      day.classList.add("today");
-    }
-  }
-}
-
-fetchcalendar();
-*/
 
 // SCRAPING
 var xhr = new XMLHttpRequest();
@@ -167,16 +94,26 @@ xhr.onload = function () {
       ".dayList > div.today div.jalali"
     );
     var year = xhr.responseXML.querySelectorAll(".selectYear");
+    var month = xhr.responseXML.querySelectorAll(".selectMonth");
     var miladidate = xhr.responseXML.querySelector(
       "#ctl00_cphTop_Sampa_Web_View_TimeUI_ShowDate11cphTop_3917_lblGregorian"
     );
     var qamaridate = xhr.responseXML.querySelector(
       "#ctl00_cphTop_Sampa_Web_View_TimeUI_ShowDate11cphTop_3917_lblHijri"
     );
-    var month = xhr.responseXML.querySelectorAll(".selectMonth");
     var event = xhr.responseXML.querySelectorAll(".list-unstyled > li");
     var tahvilesal = xhr.responseXML.querySelectorAll(".content");
-    var borgfalaki = xhr.responseXML.querySelectorAll(".astrologicalSign");
+
+    const mediaQuery = window.matchMedia("(max-width: 950px)");
+
+    if (mediaQuery.matches) {
+      miladidate = xhr.responseXML.querySelector(
+        "#ctl00_cphTop_Sampa_Web_View_TimeUI_ShowDate01cphTop_3917_lblGregorian"
+      );
+      qamaridate = xhr.responseXML.querySelector(
+        "#ctl00_cphTop_Sampa_Web_View_TimeUI_ShowDate01cphTop_3917_lblHijri"
+      );
+    }
 
     document.querySelector(".salTahvil h3").innerHTML =
       " 🎉" + tahvilesal[0].innerText + "🎉";
@@ -184,7 +121,7 @@ xhr.onload = function () {
     document.querySelector(".details-cal").innerHTML =
       month[0].innerHTML + " " + year[0].innerHTML;
 
-    console.log(response, borgfalaki[0].innerText);
+    console.log(response);
     console.log(tahvilesal[0].innerText);
 
     document.querySelector(".date").innerHTML =
@@ -308,43 +245,3 @@ function showCal() {
   cardTemp.style.display = "none";
   cardHum.style.display = "none";
 }
-
-/******** previouse code backup *********/
-/* 
- Variebel start
-const input = document.querySelector('.searchInput');
-const button = document.querySelector('.searchButton');
-const body = document.querySelector('body')
-Variebel end
-
-
-// in function baraye avordan backgrounde bodye
-function main(response) {
-    console.log(response.data);
-    const description = response.data.weather[0].description;
-    console.log(description.split(' ').join('+'));
-    body.style.backgroundImage = `url(https://source.unsplash.com/1600x900/?${description.split(' ').join('+')})`;
-}
-
-
-const weather = {   
-    featchWeather : function() {
-        const apiKey = "60cc000b9167e964953aa85a43e74d51";
-        const cityName = 'ساری';
-        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric`;
-        axios.get(`${apiUrl}&appid=${apiKey}`).then(weather.main);
-    },
-    main : function main(response) {
-        console.log(response.data);
-        const description = response.data.weather[0].description;
-        console.log(description.split(' ').join('+'));
-        body.style.backgroundImage = `url(https://source.unsplash.com/1600x900/?${description.split(' ').join('+')})`;
-    },
-    
-   displayWeather : function(response) {
-       const name = response.data.name;
-       console.log(name);
-   }
-}
-weather.featchWeather();
-*/
