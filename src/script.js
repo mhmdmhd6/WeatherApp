@@ -39,7 +39,7 @@ function displayWeather(response) {
     document.querySelector(".icon").src = "./img/weather_des/wind.gif";
   }
 
-  var persent = ((feels + 100) * 100) / 157;
+  var persent = ((feels + 90) * 100) / 147;
   var persent = Math.round(persent);
   document.querySelector(".background").style.height = persent + "%";
   if (main == "Rain") {

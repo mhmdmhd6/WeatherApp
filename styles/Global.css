@@ -403,7 +403,7 @@ nav .user {
   transform: translateX(-50%);
 }
 .card .thermometer::before {
-  content: "-100";
+  content: "-90";
   position: absolute;
   font-size: 22px;
   top: 100%;
