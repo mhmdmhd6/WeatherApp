@@ -4,7 +4,7 @@ const card_list = document.querySelector(".card--list");
 const audioRain = new Audio("./sound/rain.mp3");
 
 function featchWeather() {
-  const apiKey = "c0ac4587278e2f95fad212e0ef59e540";
+  const apiKey = "3aef771312b98ec1b62c95de453a03e3";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&lang=fa`;
   axios.get(`${apiUrl}&appid=${apiKey}`).then(displayWeather);
 }
@@ -160,17 +160,17 @@ xhr.onload = function () {
           day.style.backgroundSize = "cover";
         }
       }
-      if (month[0].innerText == "فروردین") {
-        if (day.innerText === "۱۳") {
-          day.style.background = "url(./img/tree.gif)";
-          day.style.backgroundSize = "cover";
-        }
-        for (i = 1; i <= 4; i++) {
-          if (day.innerText === i) {
-            day.style.background = "green";
-          }
-        }
-      }
+      // if (month[0].innerText == "فروردین") {
+      //   if (day.innerText === "۱۳") {
+      //     day.style.background = "url(./img/tree.gif)";
+      //     day.style.backgroundSize = "cover";
+      //   }
+      //   for (i = 1; i <= 4; i++) {
+      //     if (day.innerText === i) {
+      //       day.style.background = "green";
+      //     }
+      //   }
+      // }
     }
   }
 };
