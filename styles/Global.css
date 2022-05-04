@@ -544,7 +544,7 @@ nav .user {
 }
 .rightSide {
   width: 45%;
-  height: 65%;
+  height: 50%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -565,7 +565,7 @@ nav .user {
   backdrop-filter: blur(7px);
 }
 .salTahvil {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
@@ -654,8 +654,8 @@ nav .user {
   }
   .rightSide {
     width: 100% !important;
-    justify-content: space-around;
-    height: 80% !important;
+    justify-content: space-evenly;
+    height: 60% !important;
   }
   .oghat {
     height: 10rem;
