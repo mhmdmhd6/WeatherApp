@@ -193,8 +193,7 @@ nav .user {
     width: 70%;
     cursor: text;
   }
-  .searchBox input,
-  .searchBox button {
+  .searchBox :is(input, button) {
     font-size: 75%;
     margin: 4px;
     border-radius: 7px;
@@ -390,7 +389,6 @@ nav .user {
   margin-bottom: 10px;
   background: linear-gradient(to top, #ffa44e, rgb(255, 72, 0));
   transition: 1s;
-  /* box-shadow: -7px -13px 13px 3px #f2f5f8, 10px 10px 16px 2px #bdc7d6; */
 }
 
 .background_humidity span {
@@ -399,7 +397,6 @@ nav .user {
   left: 50%;
   font-size: 19px;
   color: #000000;
-  /* text-shadow: -3px -3px 5px #ffffff, 3px 3px 5px #60738d; */
   transform: translateX(-50%);
 }
 .card .thermometer::before {
